@@ -73,7 +73,7 @@ public class SwaggerConfig extends WebMvcConfigurerAdapter {
     }
 
     private ApiInfo apiInfo() {
-        Contact contact = new Contact("jon","http://","316476844.com");
+        Contact contact = new Contact("jon","http://","372850843.com");
         return new ApiInfoBuilder()
                 .title("Spring Data")
                 .description("Spring Data 学习记录")

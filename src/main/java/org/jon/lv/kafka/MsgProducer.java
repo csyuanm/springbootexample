@@ -24,7 +24,8 @@ public class MsgProducer {
 
     public void send(String content) {
         kafkaTemplate.send("jon-replicated-topic", content);
-        kafkaTemplate.send("jon-replicated-topic2","测试消息:" + content);
+        kafkaTemplate.send("jon-replicated-topic2", content);
+        System.out.println("topic发送消息" + content);
         kafkaTemplate.metrics();
         kafkaTemplate.execute(new KafkaOperations.ProducerCallback<String, String, Object>() {
             @Override

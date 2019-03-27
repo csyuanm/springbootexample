@@ -27,7 +27,7 @@ public class AppInterceptors extends WebMvcConfigurerAdapter {
             public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
                                      Object handler) throws Exception {
                 request.setAttribute(REQUEST_TIME, new Date());
-                System.out.println("interceptor====1111111111111");
+                System.out.println("AppInterceptors。。。。。。。。。。。。。");
                 return true;
             }
         }).addPathPatterns("/user/**", "/kafka/**");

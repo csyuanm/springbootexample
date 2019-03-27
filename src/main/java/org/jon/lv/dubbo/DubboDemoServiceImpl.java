@@ -15,7 +15,7 @@ import com.alibaba.dubbo.config.annotation.Service;
 public class DubboDemoServiceImpl implements DubboDemoService{
     @Override
     public void say(String words) {
-        System.out.println("##############" + words);
+        System.out.println("##############？？？？？" + words);
     }
 
     @Override

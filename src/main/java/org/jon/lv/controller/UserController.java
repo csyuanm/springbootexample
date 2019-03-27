@@ -48,4 +48,12 @@ public class UserController {
         resultDO.setData(userService.save(user));
         return resultDO;
     }
+    
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public ResultDO<Integer> test(){
+        ResultDO<Integer> resultDO = new ResultDO<>();
+        resultDO.setSuccess(true);
+        resultDO.setData(new Integer("1"));
+        return resultDO;
+    }
 }

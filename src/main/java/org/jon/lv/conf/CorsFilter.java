@@ -19,7 +19,7 @@ public class CorsFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse resp,  
     		FilterChain chain) throws IOException, ServletException {  
     		HttpServletResponse res = (HttpServletResponse) resp;
-    		System.out.println("=================================="+req.getRemoteAddr());
+    		System.out.println("  CorsFilter  doFilter  远程调用地址：   "+req.getRemoteAddr());
             
     		// 这里最好不要写通配符，如果允许多个域请求数据的话，可以直接用逗号隔开："http://www.baidu.com,http://google.com"  
     		  

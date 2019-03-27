@@ -16,6 +16,6 @@ public class MsgConsumer {
 
     @KafkaListener(topics = {"jon-replicated-topic","jon-replicated-topic2"})
     public void processMessage(String content) {
-        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$" + content);
+        System.out.println("consumer监听topic、topic2收到消息" + content);
     }
 }

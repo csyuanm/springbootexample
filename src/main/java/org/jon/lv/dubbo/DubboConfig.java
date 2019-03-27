@@ -58,7 +58,7 @@ public class DubboConfig{
     @Bean
     public RegistryConfig registryConfig(@Value("${dubbo.registry.url}") String registryUrl,
                                          @Value("${dubbo.registry.file}") String registryFile) {
-        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$" + registryUrl);
+        System.out.println("注入dubbo注册中心地址" + registryUrl);
         // 连接注册中心配置
         RegistryConfig registry = new RegistryConfig();
         registry.setDefault(true);
