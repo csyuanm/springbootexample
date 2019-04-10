@@ -29,14 +29,15 @@ public class ESTest extends SpringbootexampleApplicationTests{
         Tag tag2 = new Tag();
         tag2.setId("2");
         tag2.setName("elasticsearch");
-        Book book = new Book("1003", "spring boot从入门到放弃", "jon lv", "23-FEB-2017");
+        Book book = new Book("1003", "spring boot从入门到放弃", "jon lv", "20170908");
         book.setTags(Arrays.asList(tag, tag2));
         bookService.save(book);
+        System.out.println(".......end...");
     }
 
     @Test
     public void testFindOne(){
-        Book book = bookService.findOne("1003");
+        Book book = bookService.findOne("1");
 
         System.out.println(book);
     }

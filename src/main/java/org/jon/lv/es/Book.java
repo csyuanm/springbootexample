@@ -28,6 +28,17 @@ public class Book {
     private String releaseDate;
     @Field(type= FieldType.Nested)
     private List<Tag> tags;
+    
+//    @Id
+//    private String id;
+//    @Field(type = FieldType.String)
+//    private String author;
+//    @Field(type = FieldType.String)
+//    private String title;
+//    @Field(type = FieldType.String)
+//    private String releaseDate;
+//    @Field(type= FieldType.Nested)
+//    private List<Tag> tags;
 
     public Book() {
     }

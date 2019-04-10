@@ -21,8 +21,8 @@ public class KafkaController {
     @Autowired
     private MsgProducer msgProducer;
 
-    @RequestMapping(value = "/send", method = RequestMethod.GET)
-    public ResultDO<String> get(@RequestParam("content") String content){
+    @RequestMapping(value = "/send", method = RequestMethod.POST)
+    public ResultDO<String> get(String content){
         ResultDO<String> resultDO = new ResultDO<>();
 
         msgProducer.send(content);

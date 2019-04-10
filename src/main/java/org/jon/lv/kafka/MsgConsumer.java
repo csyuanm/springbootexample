@@ -14,8 +14,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class MsgConsumer {
 
-    @KafkaListener(topics = {"jon-replicated-topic","jon-replicated-topic2"})
+	//配置监听的topic，多个时用逗号隔开
+   // @KafkaListener(topics = {"jon-replicated-topic","jon-replicated-topic2"})
+    @KafkaListener(topics = {"mml"})
     public void processMessage(String content) {
-        System.out.println("consumer监听topic、topic2收到消息" + content);
+        System.out.println("consumer监听mml收到消息" + content);
     }
+    
+    
 }

@@ -14,10 +14,10 @@ public class Test {
 
 	public static void main(String[] args) throws Exception {
 
-		String[] s = { "test" };
+		String[] s = { "mml" };
 		// Check arguments length value
 		if (s.length == 0) {
-			System.out.println("Enter topic name");
+			System.out.println("Enter topic name：" + s);
 			return;
 		}
 
@@ -47,22 +47,23 @@ public class Test {
 			//producer.close();
 		}
 		
-		
+		//配置consumer端
 		Properties props2 = new Properties();
 		props2.put("bootstrap.servers", "localhost:9092");
-		props2.put("group.id", "test");
+		props2.put("group.id", topicName);  //设置监听的topic
 		props2.put("enable.auto.commit", "true");
 		props2.put("auto.commit.interval.ms", "1000");
 		props2.put("session.timeout.ms", "30000");
 		props2.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 		props2.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+		//创建consumer
 		KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props2);
 		// Kafka Consumer subscribes list of topics here.
 		consumer.subscribe(Arrays.asList(topicName));
 		// print the topic name
 		System.out.println("Subscribed to topic " + topicName);
-		int i = 0;
-		while (true) {
+		//打开监听！！放在一起时，只能读取到上一次的，本次的还没发送过去？？
+		while (true) {//有延迟。。。
 			ConsumerRecords<String, String> records = consumer.poll(100);
 			for (ConsumerRecord<String, String> record : records) {
 

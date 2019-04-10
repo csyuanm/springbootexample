@@ -31,8 +31,8 @@ public class EmailService extends SpringbootexampleApplicationTests {
     @Test
     public void sendSimpleEmail(){
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("316476844@qq.com");//发送者.
-        message.setTo("lvbin@oriental-finance.com");//接收者.
+        message.setFrom("372850843@qq.com");//发送者.
+        message.setTo("372850843@qq.com");//接收者.
         message.setSubject("测试邮件（邮件主题）");//邮件主题.
         message.setText("这是邮件内容");//邮件内容.
 

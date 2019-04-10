@@ -42,7 +42,7 @@ public class UserController {
 //    })
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public ResultDO<Integer> add(User user){
+    public ResultDO<Integer> add(User user){  //参数是对象的时候，为啥要把属性分开来传？
         ResultDO<Integer> resultDO = new ResultDO<>();
         resultDO.setSuccess(true);
         resultDO.setData(userService.save(user));
