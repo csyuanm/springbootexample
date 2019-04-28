@@ -23,7 +23,7 @@ public class MsgProducer {
     private KafkaTemplate<String,String> kafkaTemplate;
 
     public void send(String content) {
-    	for(int i = 0;i < 100;i++) {
+    	for(int i = 0;i < 1;i++) {
     		kafkaTemplate.send("mml", content);
     		kafkaTemplate.send("mml", 0, content+"--3");
     		kafkaTemplate.send("mml", "kkk", content+"--3");

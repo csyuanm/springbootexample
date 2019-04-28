@@ -3,6 +3,7 @@ package nio.demo;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.channels.DatagramChannel;
 import java.nio.channels.FileChannel;
 
 public class NIOWriteDemo {
@@ -10,24 +11,28 @@ public class NIOWriteDemo {
 	static private final byte message[] = {112, 55, 121, 12, 45, 12};
 	
 	public static void main(String[] args) throws IOException {
-		//´´½¨Êä³öÁ÷£¬Ö¸¶¨Êä³öµÄÎ»ÖÃ
-		FileOutputStream out = new FileOutputStream("G:\\temp\\nioÊä³ö.txt");
-		//»ñÈ¡Êä³öÁ÷µÄchannel
+		//åˆ›å»ºè¾“å‡ºæµï¼ŒæŒ‡å®šè¾“å‡ºçš„ä½ç½®
+		FileOutputStream out = new FileOutputStream("G:\\temp\\nioè¾“å‡º.txt");
+		//è·å–è¾“å‡ºæµçš„channel
 		FileChannel outChannel = out.getChannel();
-		//´´½¨buffer,²¢ÉèÖÃ»º³åÇø´óĞ¡
+		//å››ç§channelï¼ˆé€šé“ï¼‰ç±»å‹FileChannelã€  DatagramChannelã€SocketChannelã€ServerSocketChannel
+//		FileChannel fileChannel = out.getChannel();
+//		DatagramChannel datagramChannel = out.getChannel();  //
+		
+		//åˆ›å»ºbuffer,å¹¶è®¾ç½®ç¼“å†²åŒºå¤§å°
 		ByteBuffer buffer = ByteBuffer.allocate(1024);
 		
-		//°ÑÊı¾İĞ´Èë»º³åÇø
+		//æŠŠæ•°æ®å†™å…¥ç¼“å†²åŒº
 		for(int i = 0; i < message.length; i++) {
 			buffer.put(message[i]);
 		}
-		//½øĞĞ¶ÁĞ´×ª»»  limit=position  position=0
+		//è¿›è¡Œè¯»å†™è½¬æ¢  limit=position  position=0
 		buffer.flip();
 		
-		//°Ñ»º³åÇøµÄÄÚÈİĞ´µ½Í¨µÀ£¬¼´¿ÉÍê³É´«Êä£¨BIOÊÇÍ¨¹ıÁ÷µÄĞÎÊ½£¬NIOÊÇ»º³åÇø£©
+		//æŠŠç¼“å†²åŒºçš„å†…å®¹å†™åˆ°é€šé“ï¼Œå³å¯å®Œæˆä¼ è¾“ï¼ˆBIOæ˜¯é€šè¿‡æµçš„å½¢å¼ï¼ŒNIOæ˜¯ç¼“å†²åŒºï¼‰
 		outChannel.write(buffer);
 		
-		//¹Ø±ÕÊä³öÁ÷
+		//å…³é—­è¾“å‡ºæµ
 	}
 
 }

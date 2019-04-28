@@ -31,4 +31,15 @@ public class KafkaController {
         resultDO.setData(content);
         return resultDO;
     }
+    
+    @RequestMapping(value = "/sendAuto", method = RequestMethod.POST)
+    public ResultDO<String> send(){
+        ResultDO<String> resultDO = new ResultDO<>();
+        String content = "this is auto message!";
+        msgProducer.send(content);
+
+        resultDO.setSuccess(true);
+        resultDO.setData(content);
+        return resultDO;
+    }
 }
