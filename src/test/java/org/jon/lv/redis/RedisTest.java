@@ -20,11 +20,11 @@ public class RedisTest extends SpringbootexampleApplicationTests {
         User user = new User();
         user.setName("测试");
         user.setPhone("123444444444");
-        RedisUtils.set("springboottest", user, 10000L);
+        RedisUtils.set("redis_user", user, 10000L);
     }
 
     @Test
     public void getVal(){
-        System.out.println("**************************" + RedisUtils.get("springboottest"));
+        System.out.println("redis获取到的值为：" + RedisUtils.get("redis_user"));
     }
 }
