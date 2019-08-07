@@ -6,6 +6,7 @@
 package collection.map;
 
 import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -21,14 +22,26 @@ public class Test {
 	 * @version 1.0
 	 */
 	public static void main(String[] args) {
-		HashMap<String, Object> map = new HashMap<>();
+		Map<String, Object> map = new HashMap<>();
 		int i = 0;
 		while(i < 100000) {
 			map.put(i+"", i);
 			i++;
 		}
+		map1(map);
 		System.out.println(map.size());
 	}
 	
+	
+	public static void map1(Map<String, Object> map) {
+		Map<String, Object> map2 = map;
+		int i = 0;
+		while (i < 5000) {
+			map.remove(i + "");
+			i++;
+		}
+		map2.remove("9999");
+		System.out.println(map.size());
+	}
 
 }

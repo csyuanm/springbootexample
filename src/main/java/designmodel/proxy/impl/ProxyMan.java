@@ -8,6 +8,7 @@ package designmodel.proxy.impl;
 import designmodel.proxy.IProxy;
 
 /**
+ * 代理模式：目的是为了隐藏实际执行者
  * @author MML
  * @Date    2019-07-10
  * @version    V1.0 

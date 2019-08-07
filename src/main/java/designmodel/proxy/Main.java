@@ -25,12 +25,12 @@ public class Main {
 	public static void main(String[] args) {
 		
 		//创建代理
-		ProxyMan proxy = new ProxyMan();
+		ProxyMan proxy = new ProxyMan();  //创建代理类
 		proxy.buyBreakfast();
 		proxy.sendEmail();
 		proxy.repiredBug();
 		//开发
-		ProxyMan developer = new ProxyMan(new Developer());
+		ProxyMan developer = new ProxyMan(new Developer());  //当可以根据传入对象产生对应的对象时，就是装饰器模式
 		developer.buyBreakfast();
 		developer.sendEmail();
 		developer.repiredBug();
